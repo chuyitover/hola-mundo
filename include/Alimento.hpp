@@ -4,7 +4,7 @@ private:
     int Energia;
 public:
     Alimento(int Energia){
-        this->Energia - Energia;
+        this->Energia = Energia;
     }
     ;
     ~Alimento(){}
@@ -12,11 +12,3 @@ public:
             return Energia;
         };
 };
-
-Alimento::Alimento(/* args */)
-{
-}
-
-Alimento::~Alimento()
-{
-}
