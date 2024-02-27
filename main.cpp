@@ -2,17 +2,18 @@
 using namespace std;
 
 #include <Mascota.hpp>
+#include <Alimento.hpp>
 
 int main(int argc, char const *argv[])
 {
    Mascota m1;
    Mascota m2;
    Mascota m3;
-   Alimento ali,mento(5);
-   m1.comer();
-   m2.comer();
-   m3.comer();
+   Alimento alimento(5);
+   m1.comer(alimento);
+   m2.comer(alimento);
+   m3.comer(alimento);
 
-    cout<<"mascota "<< m1.LeerEnergia() <<endl; 
+    cout<<"mascota "<<m1.LeerEnergia()<<endl; 
     return 0;
 }

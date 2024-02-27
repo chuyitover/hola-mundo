@@ -1,0 +1,43 @@
+@startuml mascota 
+
+class Mascota{
+    - salud : Salud
+    +Comer()
+    } 
+class Alimento{
+    -mascota : Mascota
+    +salud()
+}
+Package Estado{
+class Salud 
+Class Fuerza
+class Enfermedad
+}
+
+Package Emocion{
+class Tristeza
+class Felicidad
+}
+
+Package Thinks{
+class Ropa 
+class casa
+class Juguete
+}
+Mascota "1" o-- "1" Alimento
+Mascota "1" o-- "1" Salud
+Alimento "1" <|-- "1" Salud
+Alimento  "1" <|- "1"Felicidad
+Alimento "1" <|- "1" Fuerza
+Enfermedad "1"<|- "1" Tristeza
+Salud "1" <|- "1" Fuerza
+Ropa "1" <|- "1" Felicidad
+Ropa "1" <|- "1" salud
+Mascota "1" *-- "1" casa
+casa "1" <|-- "1" Felicidad 
+salud "1" <|-- "1" Felicidad
+Mascota "1" *-- "3" Ropa
+Mascota "1" <|-- "1"Felicidad
+Mascota "1" *-- "3" Juguete
+Juguete "1" <|-- "1" salud
+@enduml

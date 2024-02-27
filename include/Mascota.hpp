@@ -1,4 +1,6 @@
 #pragma once
+#include <Alimento.hpp>
+
 class Mascota
 {
 private:
@@ -11,10 +13,9 @@ public:
     }
     ~Mascota() {}
     void comer(Alimento Alimento) {
-        this->Energia+= alimento.ExtraerEnergia();
-    }
-};
+        this->Energia+= Alimento.ExtraerEnergia();
+    }   
     int LeerEnergia(){
         return this->Energia;
-}
+    }
 };
