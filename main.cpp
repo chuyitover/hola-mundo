@@ -1,4 +1,5 @@
 #include <iostream>
+#include <list>
 #include <Mascota.hpp>
 #include <Alimento.hpp>
 #include <Dibujo.hpp>
@@ -6,19 +7,33 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
+    list<Dibujo> dibujos;
+
     Dibujo dibujo("./assets/perro.txt");
     dibujo.Dibujar();
 Dibujo dibujo1("./assets/sar.txt");
     dibujo1.Dibujar();
 
-   Mascota m1;
-   Mascota m2;
-   Mascota m3;
-   Alimento alimento(5);
-   m1.comer(alimento);
-   m2.comer(alimento);
-   m3.comer(alimento);
+    // dibujos.push_front(dibujo);
+    // dibujos.push_front(dibujo1);
 
-    cout<<"mascota "<<m1.LeerEnergia()<<endl; 
+   Mascota m1,m2,m3;
+
+list<Mascota> mascotas;
+mascotas.push_back(m1);
+mascotas.push_back(m2);
+mascotas.push_back(m3);
+
+   Alimento alimento(5);
+
+   for (auto &&mascotaActual : mascotas)
+   {
+    mascotaActual.comer(alimento);
+   }
+   for (auto &&mascotaActual : mascotas)
+   {
+     cout<<"mascota "<<mascotaActual.LeerEnergia()<<endl; 
+   }
+   
     return 0;
 }

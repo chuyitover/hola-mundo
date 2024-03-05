@@ -12,8 +12,8 @@ public:
         this->Energia=0;
     }
     ~Mascota() {}
-    void comer(Alimento Alimento) {
-        this->Energia+= Alimento.ExtraerEnergia();
+    void comer(Alimento alimento) {
+        this->Energia += alimento.ExtraerEnergia();
     }   
     int LeerEnergia(){
         return this->Energia;
